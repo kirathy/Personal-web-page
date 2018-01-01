@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<script src="js/JQuery.js"></script>
+<script>
+$(function () {	
+    //change slide on the left when click
+	var _this=0;
+	$('#directory a').on('mousedown',function(){
+		_this=$(this).parent().index();
+		$('#directory li').removeClass('cur').eq(_this).addClass('cur');
+		
+		//jump to relevant slide
+		$('#word li').removeClass('cur_w').eq(_this).addClass('cur_w');
+	})
+	
+	
+	
+	
+});
+</script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/style_p.css">
+<title>Profile_simple</title>
+</head>
+
+<body>
+  <div class="head">
+      <nav class="navbar">
+        <div class="content">   
+          <a class="top_link_left " hidefocus="true" href="Home.html" target="_blank" >Home</a>
+          <a class="top_link_left active" hidefocus="true" href="profile.html" target="_blank">Profile</a>
+          <a class="top_link_left" hidefocus="true" href="portofolio.html" target="_blank">Portofolio</a> 
+        </div>
+      </nav>
+  </div>
+  <div class="detail">
+  	<div class="slide">
+    	<ul id="directory">
+        	<li class="dai cur"><a class="dai" href="javascript:;">About</a></li>
+            <li><a class="dai" href="javascript:;">Education</a></li>
+            <li><a class="dai" href="javascript:;">Skills</a></li>
+            <li><a class="dai" href="javascript:;">Experience</a></li>
+        </ul>
+    </div>
+    <div class="word">   
+    	<ul id="word"> 
+        <li class="abt cur_w content-r">
+        	<table id="abt">
+        		<tr><td>Name: Haoyu(Cathy) Pang
+        		<tr><td>Current Study: The University of Melbourne - Master</td></tr>
+        		<tr><td>Home: 570 Lygon Street, Melbourne, VIC, 3053</td></tr>
+        		<tr><td>Call: 0452490614 </td></tr>
+        		<tr><td>E-mail: <a href="mailto:kirathy3@gmail.com">kirathy3@gmail.com</a></td></tr>
+        		<tr><td>Hard-working, Master Student, looking to apply education and experience to a job in software developing. Have experience in programming with C#, HTML, database and graphic design.</td></tr>
+			</table>
+        </li>
+    	<li class="edu content-r">
+        	<table id="edu">
+        		<tr><td>2015 to Current<br/>
+        		Master of Engineering: Spatial<br/>
+        		The University of Melbourne — Melbourne, Australia</td></tr>
+                
+       		  <tr><td>2011 to 2015	<br/>
+        	  Bachelor of Science: Geographic Information System<br/>
+        		Nanjing Normal University — Nanjing, Jiangsu, China<br/>
+                [3.43] GPA</td></tr>
+			</table>
+        </li>
+        <li class="skill content-r" >
+        <table id="skill">
+        	<tr><td>Microsoft Word, Excel, PowerPoint</td></tr>
+            <tr><td>Corel Video Studio</td></tr>
+            <tr><td>Autodesk 3ds Max, AutoCAD</td></tr>
+            <tr><td>Oracle, Microsoft SQL Server</td></tr>
+            <tr><td>Experience in C / C#</td></tr>
+            <tr><td>Proficiency in HTML, CSS, JavaScript</td></tr>
+            <tr><td>Microsoft Visual Studio, Dreamweaver</td></tr>
+            <tr><td>Adobe Photoshop</td><tr>
+        </table>
+        </li>
+        <li class="exp content-r">
+        <table id="exp">
+        	<th>Professional Experience</th>
+        	<tr><td>06/2014 to 08/2014	Intern<br/>
+        	Jiangsu Provincial Bureau of Surveying and Mapping- Nanjing, Jiangsu, China<br/>
+        	Calibrate batches of aerial photographe<br/> 
+        	Design a map of Nanjing for navigation</td></tr>
+            <th>Publications</th>
+            <tr><td>03/2014	Mobile Phone Theme – Rainbow<br/>
+            PUBLISHED BY: Meizu<br/>
+            Design 100+ icons of APP and interfaces used on Meizu Mobile</td></tr>
+            <th>Projects</th>   
+			<tr><td>07/2016 to 10/2016	<br/>
+            Spatial Visualisation WITH: Michael Rigby<br/>
+            Design an interface with Processing to analyse and visualize movement data</td></tr>
+            <tr><td>11/2014 to 6/2015<br/>
+            Automatic identifier and three-dimensional modelling of synclinal water -storing<br/>
+            This is the topic of my undergraduate research.<br/>
+            The aim is to develop an automatic identifier and three-dimensional modelling of synclinal water-storing based on a planar map of Lu Mountain with ArcEngine, Oracle and C# programming. This involves knowledge on Expert System and 3D Modelling.</td></tr>
+            <tr><td>01/2014 to 06/2014	<br/>
+            University Student Renovation Project<br/>
+            Produce 3D models for Nanjing Olympic Sports Centre and Nanjing Radio and Television Tower using 3dsMax.<br/>
+            Visualize the 3D models in CityGML format on a web client using JavaScript.</td></tr>
+        </table>
+        </li>
+    </div>
+    </ul>
+  </div>
+</body>
+</html>

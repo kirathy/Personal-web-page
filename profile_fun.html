@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="CSS/style_profile_fun.css"/>
+    <script type="text/javascript" src="js/JQuery.js" />
+    </script>
+    <script type="text/javascript" src="js/lightning.js">
+	</script>
+    <script type="text/javascript" src= "https://rawgit.com/SeanFree/Vector2/master/Vector2.js">
+	</script>
+<title>Profile_fun</title>
+<body  unselectable="none" onselectstart="return false;">
+<div class="head">
+    <nav class="navbar">
+      <div class="content">   
+        <a class="top_link_left " hidefocus="true" href="Home.html" target="_blank" >Home</a>
+        <a class="top_link_left active" hidefocus="true" href="profile_fun.html" target="_blank">Profile</a>
+        <a class="top_link_left" hidefocus="true" href="portofolio.html" target="_blank">Portofolio</a> 
+      </div>
+    </nav>
+</div>
+
+<div class="cloud">
+	<div id="cloud1">
+    	<img src="img/cloud1.png" width="260"/>
+        <span >About me</span>
+     </div>
+     <div id="cloud2">
+    	<img src="img/cloud1.png"  width="300" />
+        <span >Experience</span>
+     </div>
+     <div id="cloud3">
+    	<img src="img/cloud1.png" width="270" />
+        <span>Abilities</span>
+     </div>
+     <div id="cloud_flow">
+     </div>    
+</div>
+<canvas id="canvas"></canvas>
+
+<script>
+var w=document.documentElement.clientWidth,h=document.documentElement.clientHeight;
+var $flow = $('#cloud_flow');
+function init()
+{
+	clearInterval();
+	var pic;
+	for(i=0;i<60;i++)
+	{
+		pic=GetRandom();
+		$flow.append(pic);
+	}	
+}
+
+function GetRandom()
+{
+	var x = Math.random()*w-100;
+	var y = Math.random()*h+300;  
+	var pic = document.createElement("img");
+	pic.src="img/cloud_flow.png";
+	pic.style.left=x+"px";
+	pic.style.top=y+"px";
+	pic.style.position="absolute";  
+	return pic;
+}
+
+$(".cloud img,.cloud span").on('mouseover',function(){	
+	this.style.transform= "scale(1.1)";
+    this.style.transition= "all 0.5s ease 0s";
+	$(this).siblings().css("transform","scale(1.2)");
+	$(this).siblings().css("transition","all 0.5s ease 0s");
+});
+
+$(".cloud img,.cloud span").on('mouseout',function(){
+	//this.siblings().transform= "scale(1)";
+	this.style.transform= "scale(1)";
+    this.style.transition= "all 0.5s ease 0s";
+	$(this).siblings().css("transform","scale(1)");
+	$(this).siblings().css("transition","all 0.5s ease 0s");
+});
+
+//lightning come
+$(".cloud img,.cloud span").on('mousedown',function(e){
+	$(this).parent().children("span").css("color","#FD7600");
+	$(this).parent().children("img").css("-webkit-filter","invert(5%)");
+});
+
+//lightning explode
+$(".cloud img,.cloud span").on('mouseup',function(e){
+	$(this).parent().children("span").css("color","#0A5ABE");
+	$(this).parent().children("img").css("-webkit-filter","invert(0%)");	
+});
+
+function lightning(x,y)
+{
+	
+}
+
+window.onload=function(){
+	init();
+}
+
+
+</script>
+
+</body>
+</html>
